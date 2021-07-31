@@ -1,10 +1,8 @@
-package com.dio.ControleAcesso.model;
+package com.dio.ControleAcesso.model.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
@@ -13,7 +11,9 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 public class Calendario {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

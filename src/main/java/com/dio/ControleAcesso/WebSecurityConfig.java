@@ -11,7 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {       // -> Segurança esta Desabilitada
 
 
 
@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) {  // -> pastas liberadas
         web
                 .ignoring()
-                .antMatchers("/h2/**");
+                .antMatchers("/h2/**"); // -> Liberado acesso ao banco H2 console
     }
 
 

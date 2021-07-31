@@ -1,9 +1,10 @@
 package com.dio.ControleAcesso.controller;
 
 
-import com.dio.ControleAcesso.model.JornadaTrabalho;
-import com.dio.ControleAcesso.service.JornadaService;
+import com.dio.ControleAcesso.model.entity.JornadaTrabalho;
+import com.dio.ControleAcesso.model.service.JornadaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,14 +40,14 @@ public class JornadaTrabalhoController {
 
 
     @DeleteMapping("/{idJornada}")
-    public ResponseEntity deleteJornadaById(@PathVariable("idJornada") Long idJornada) throws Exception {     // -> ResponseEntity (garante a mensagem de retorno em caso de erro ex: 404
+    public ResponseEntity deleteJornadaById(@PathVariable("idJornada") Long idJornada) {     // -> ResponseEntity (garante a mensagem de retorno em caso de erro ex: 404
         try {
             jornadaService.deleteJornadaById(idJornada);
-        }catch (Exception e){
-            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("id não Existe no banco  id:"+idJornada);
         }
-        return (ResponseEntity<JornadaTrabalho>) ResponseEntity.ok();
 
+        return ResponseEntity.status(HttpStatus.OK).body("Id Deletado com Sucesso  Id:"+idJornada);
     }
 
 

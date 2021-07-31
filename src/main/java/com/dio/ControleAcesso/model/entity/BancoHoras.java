@@ -1,4 +1,4 @@
-package com.dio.ControleAcesso.model;
+package com.dio.ControleAcesso.model.entity;
 
 import lombok.*;
 

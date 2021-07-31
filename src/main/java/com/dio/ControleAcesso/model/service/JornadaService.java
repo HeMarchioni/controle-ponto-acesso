@@ -1,7 +1,7 @@
-package com.dio.ControleAcesso.service;
+package com.dio.ControleAcesso.model.service;
 
-import com.dio.ControleAcesso.model.JornadaTrabalho;
-import com.dio.ControleAcesso.repository.JornadaRepository;
+import com.dio.ControleAcesso.model.entity.JornadaTrabalho;
+import com.dio.ControleAcesso.model.repository.JornadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

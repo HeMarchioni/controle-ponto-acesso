@@ -23,7 +23,7 @@ public class SwaggerConfig {
     public Docket apiAdmin() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dio.live"))
+                .apis(RequestHandlerSelectors.basePackage("com.dio.ControleAcesso"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .apiInfo(apiInfo())
@@ -41,12 +41,12 @@ public class SwaggerConfig {
     @Bean
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("API-REST")
-                .description(" super live code")
+                .title("API-REST-Controle-Ponto-Acesso")
+                .description(" API Rest para controle de ponto e acesso dos usuários de uma empresa")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                .contact(new Contact("DIO", "https://web.digitalinnovation.one", "contato@digitalinnovationone.com.br"))
+                .contact(new Contact("Henrique Marchioni", "https://www.linkedin.com/in/henrique-marchioni/", "henrique.marchioni@fatec.sp.gov.br"))
                 .build();
     }
 }
