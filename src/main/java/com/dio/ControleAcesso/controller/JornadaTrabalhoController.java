@@ -32,6 +32,22 @@ public class JornadaTrabalhoController {
     }
 
 
+    @PutMapping
+    public JornadaTrabalho updateJornada(@RequestBody JornadaTrabalho jornadaTrabalho) {
+        return jornadaService.updateJornada(jornadaTrabalho);
+    }
+
+
+    @DeleteMapping("/{idJornada}")
+    public ResponseEntity deleteJornadaById(@PathVariable("idJornada") Long idJornada) throws Exception {     // -> ResponseEntity (garante a mensagem de retorno em caso de erro ex: 404
+        try {
+            jornadaService.deleteJornadaById(idJornada);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return (ResponseEntity<JornadaTrabalho>) ResponseEntity.ok();
+
+    }
 
 
 
